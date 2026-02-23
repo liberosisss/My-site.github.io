@@ -1,64 +1,448 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My site :-D</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body class="style-bg-1">
-  <header>
-      <nav aria-label="main navigation">
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="aboutme.html">About me</a></li>
-              <li><a href="journal.html">Journal</a></li>
-          </ul>
-      </nav>
-  </header>
-  
-  <div class="container-1">
-    <div class="left-image">
-      <img src="img/face.webp" class="imgsize-1" alt="Face">
-    </div>
-    <div class="center-text">
-      <section>
-        <article>
-          <h1 class="fontsize-2 style-2">Welcome</h1>
-          <p class="fontsize-1 style-1 style-border-1 text-left">
-            Hi! I'm Liberosis and this is my website.
-            There's not as much content here as I'd like, but I'm still working on it.
-          </p>
-        </article>
-      </section>
-    </div>
-    <div class="right-image">
-      <img src="img/face2.webp" class="imgsize-1" alt="Face">
-    </div>
-  </div>
-  
-  <hr class="line-1">
-  <hr class="line-2">
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
 
-  <div class="images-container">
-    <div class="image-column left-column">
-      <img src="img/face3.png" class="column-img" alt="Face">
-      <img src="img/column.png" class="column-img" alt="Column">
-      <img src="img/face4.png" class="column-img" alt="Face">
-    </div>
-    <div>
-      <p class="fontsize-1 style-1">Here you can find info about my future projects.</p>
-      <a href="myprojects.html" class="fontsize-1 style-1">Clik</a>
-    </div>
-    <div class="image-column right-column">
-      <img src="img/face3.png" class="column-img flipped" alt="Face mirrored">
-      <img src="img/column.png" class="column-img flipped" alt="Column mirrored">
-      <img src="img/face4.png" class="column-img flipped" alt="Face mirrored">
-    </div>
-  </div>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <footer>
-    <p class="fontsize-1 style-1">Thanks to these cool guys: Gan (my friend) and justadevvv on <a href="https://bsky.app/profile/justadevvv.bsky.social" class="style-1">Bluesky</a></p>
-  </footer>
-</body>
-</html>
+h1 {
+  font-weight: normal;
+  margin-top: 15px;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  padding: 15px 20px 20px 20px;
+  width: 100%;
+  line-height: 1;
+  position: relative;
+  border-bottom: none;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: 
+      linear-gradient(90deg, 
+        rgba(0,0,0,0.4) 0%, 
+        rgba(0,0,0,0.2) 10%, 
+        transparent 20%, 
+        transparent 80%, 
+        rgba(0,0,0,0.2) 90%, 
+        rgba(0,0,0,0.4) 100%),
+      url('img/paper-texture.jpg') repeat;
+    background-size: auto, 200px auto;
+    z-index: 1;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: 
+      linear-gradient(90deg, 
+        rgba(0,0,0,0.4) 0%, 
+        rgba(0,0,0,0.2) 10%, 
+        transparent 20%, 
+        transparent 80%, 
+        rgba(0,0,0,0.2) 90%, 
+        rgba(0,0,0,0.4) 100%),
+      url('img/paper-texture.jpg') repeat 40px 0;
+    background-size: auto, 200px auto;
+    z-index: 2;
+  }
+}
+
+
+header ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+header li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+header li:first-child {
+  justify-content: flex-start;
+}
+
+header li:nth-child(2) {
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0; 
+}
+
+header li:last-child {
+  justify-content: flex-end;
+}
+
+header a {
+  font-family: "UnifrakturMaguntia";
+  color: #3F5A65;
+  font-size: 40px;
+  display: block;
+  padding: 0 15px;
+  white-space: nowrap;
+}
+
+footer {
+  margin-top: 30px;
+  padding: 15px 20px 20px 20px;
+  width: 100%;
+  line-height: 1;
+  position: relative;
+  border-bottom: none;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: 
+      linear-gradient(90deg, 
+        rgba(0,0,0,0.4) 0%, 
+        rgba(0,0,0,0.2) 10%, 
+        transparent 20%, 
+        transparent 80%, 
+        rgba(0,0,0,0.2) 90%, 
+        rgba(0,0,0,0.4) 100%),
+      url('img/paper-texture.jpg') repeat;
+    background-size: auto, 200px auto;
+    z-index: 2;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: 
+      linear-gradient(90deg, 
+        rgba(0,0,0,0.4) 0%, 
+        rgba(0,0,0,0.2) 10%, 
+        transparent 20%, 
+        transparent 80%, 
+        rgba(0,0,0,0.2) 90%, 
+        rgba(0,0,0,0.4) 100%),
+      url('img/paper-texture.jpg') repeat 40px 0;
+    background-size: auto, 200px auto;
+    z-index: 2;
+  }
+}
+
+
+.fontsize-1 {
+  font-size: 30px;
+  min-height: 20px;
+}
+
+.fontsize-2 {
+  font-size: 80px;
+  min-height: 60px;
+}
+
+.imgsize-1 {
+  width: 200px;
+}
+
+.imgsize-2 {
+  width: 300px;
+}
+
+.container-1 {
+  display: flex;
+  align-items: flex-end; 
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.left-image, .right-image {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-end; 
+}
+
+.left-image img, 
+.right-image img {
+  height: auto;
+  display: block; 
+}
+
+.images-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.image-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 0 1 auto;
+  width: 120px;
+}
+
+.column-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.right-column .column-img.flipped {
+  transform: scaleX(-1);
+}
+
+.center-text {
+  flex: 1;
+  text-align: center;
+  padding: 0 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  min-height: 100%; 
+}
+
+.text-left {
+  flex: 1;
+  text-align: left;
+  display: flex;
+  justify-content: flex-end; 
+  min-height: 100%; 
+}
+
+.style-1 {
+  font-family: "UnifrakturMaguntia";
+  color: #6A4242;
+}
+
+.style-2 {
+  font-family: "UnifrakturMaguntia";
+  color: #528959;
+}
+
+.style-border-1 {
+  border: 3px #6A4242;
+  border-style: dashed;
+  padding: 10px 15px; 
+  margin-top: auto; 
+}
+
+.line-1 {
+  border: none;
+  height: 6px;
+  margin: 5px 0;
+  position: relative;
+  background: 
+    linear-gradient(90deg, rgba(0,0,0,0.3) 0%, transparent 15%, transparent 85%, rgba(0,0,0,0.3) 100%),
+    url('img/paper-texture.jpg') repeat;
+  background-size: 80px auto, 80px auto;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #528959 0%, transparent 15%, transparent 85%, #528959 100%);
+    mix-blend-mode: multiply;
+  }
+}
+
+.line-2 {
+  border: none;
+  border-top: 2px dashed #6A4242;
+}
+
+.style-bg-1 {
+  min-height: 100vh;
+  background-image: url("img/wall.png");
+  background-repeat: repeat;
+  background-size: 300px;
+}
+
+@media (max-width: 992px) {
+  header a {
+    font-size: 30px;
+    padding: 0 10px;
+  }
+
+  .imgsize-1 {
+    width: 120px;
+  }
+
+  .imgsize-2 {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+    header {
+    padding: 10px 15px 5px 15px;
+  }
+  
+  header::before {
+    bottom: 5px; 
+    height: 2px;
+  }
+  
+  header::after {
+    bottom: 0;
+    height: 2px; 
+  }
+  
+  header ul {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+  
+  header ul {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  header li {
+    flex: 0 1 auto;
+    margin: 0;
+    justify-content: center;
+  }
+
+  header li:first-child {
+    justify-content: flex-start;
+    order: 1;
+  }
+
+  header li:nth-child(2) {
+    justify-content: center;
+    order: 2;
+    position: static;
+    flex-shrink: 0;
+  }
+
+  header li:last-child {
+    justify-content: flex-end;
+    order: 3;
+  }
+
+  header a {
+    font-size: 20px;
+    padding: 5px 8px;
+  }
+
+  .fontsize-1 {
+    font-size: 15px;
+    min-height: 10px;
+  }
+  
+  .fontsize-2 {
+    font-size: 40px;
+    min-height: 30px;
+  }
+
+  .container {
+    gap: 10px;
+    padding: 15px;
+    align-items: flex-end; 
+  }
+
+  .imgsize-1 {
+    width: 80px;
+  }
+
+  .imgsize-2 {
+    width: 70px; 
+  }
+  .center-text {
+    padding: 0 10px;
+  }
+
+  .style-border-1 {
+  border: 2px #6A4242;
+  border-style: dashed;
+  padding: 5px 5px; 
+  margin-top: auto; 
+  }
+
+  .style-bg-1 {
+    background-size: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 8px 10px 4px 10px;
+  }
+  
+  header a {
+    font-size: 16px;
+    padding: 3px 5px;
+  }
+  
+  .fontsize-1 {
+    font-size: 16px;
+  }
+  
+  .left-image img, 
+  .right-image img {
+    width: 60px;
+  }
+  
+  .container {
+    gap: 8px;
+  }
+}
+@media (max-width: 360px) {
+  header a {
+    font-size: 14px;
+    padding: 2px 3px;
+    white-space: normal;
+    word-break: break-word;
+  }
+  
+  .left-image img, 
+  .right-image img {
+    width: 50px;
+    padding: 10px;
+    align-items: flex-end; 
+  }
+  
+  .center-text {
+    padding: 0 8px;
+  }
+}
+
+
