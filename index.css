@@ -398,6 +398,7 @@ footer {
   }
 
   .style-bg-1 {
+    background-image: url("img/wall.png");
     background-size: 200px;
   }
 }
@@ -444,5 +445,6 @@ footer {
     padding: 0 8px;
   }
 }
+
 
 
